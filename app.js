@@ -36,7 +36,7 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 }]);
 
 
-weatherApp.controller('forecastController', ['$scope', '$resource','cityService', function($scope, $resource, cityService){
+weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService', function($scope, $resource, cityService){
   $scope.city = cityService.city;
 
   $scope.$watch('city', function() {
@@ -49,6 +49,12 @@ weatherApp.controller('forecastController', ['$scope', '$resource','cityService'
 
   $scope.weatherResult = $scope.weatherAPI.get({q: $scope.city, cnt: 2});
 
-  console.log($scope.weatherResult)
+  $scope.convertToCelsius = function(degK){
+    return Math.round(degK - 273.15)
+  }
+
+  $scope.convertDate = function(date){
+    return new Date(date * 1000);
+  }
 
 }]);

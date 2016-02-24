@@ -2,8 +2,6 @@
   <a href="#/">Back to Search</a>
 </p>
 
-
-
 Forecast for {{city}}
 <hr />
 Days: <a href="#/forecast/2" ng-class="{'bg-primary': days === '2'}">2</a> | <a href="#/forecast/5" ng-class="{'bg-primary': days === '5'}">5</a> | <a href="#/forecast/7" ng-class="{'bg-primary': days === '7'}">7</a>
@@ -12,7 +10,7 @@ Days: <a href="#/forecast/2" ng-class="{'bg-primary': days === '2'}">2</a> | <a 
 <div ng-repeat="w in weatherResult.list">
   <div class="row">
     <div class="col-md-12">
-      <forecast-results></forecast-results>
+      <forecast-results weather-day="w" convert-date="convertDate(dt)"  convert-to-celsius="convertToCelsius(degK)" date-format="d, MMM, y"></forecast-results>
     </div>
   </div>
 </div>

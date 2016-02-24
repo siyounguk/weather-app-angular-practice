@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"> {{ convertDate(w.dt) | date : 'fullDate' }} </h3>
+  </div>
+  <div class="panel-body">
+    Daytime temperature: {{ convertToCelsius(w.temp.day) }}c
+  </div>
+</div>

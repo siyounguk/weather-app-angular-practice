@@ -64,3 +64,16 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
   }
 
 }]);
+
+weatherApp.directive("forecastResults", function() {
+   return {
+       restrict: 'AECM',
+       templateUrl: 'directives/forecastResults.html',
+       replace: true,
+       // scope: {
+       //     personObject: "=",
+       //     formattedAddressFunction: "&"
+       // }
+   }
+});
+
